@@ -32,6 +32,11 @@ def is_pass(marks):
     avg = average(marks)
     return all(m >= 40 for m in marks) and avg >= 50
 
+def gpa_point(avg):
+    """Convert average marks (0-100) to a 10.0 GPA scale."""
+    if avg < 0 or avg > 100:
+        raise ValueError(f"Invalid average: {avg}. Must be between 0 and 100.")
+    return round(avg / 10.0, 2)
 
 if __name__ == "__main__":
     sample1 = [88, 92, 85, 90, 95]
